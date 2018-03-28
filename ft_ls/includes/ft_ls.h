@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 21:01:29 by ysibous           #+#    #+#             */
-/*   Updated: 2018/03/28 11:23:43 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/03/28 11:35:30 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_options
 
 void				init_options(t_options *opt);
 
-void				get_options(char *options, t_options *opt);
+void				set_options(char *options, t_options *opt);
 
+void				get_options(int argc, char **argv, t_options *opt);
 #endif
