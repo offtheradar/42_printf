@@ -1,6 +1,7 @@
 # 42_ls
 
-This is my implementation of the famous terminal function "ls". The following flags are available: <br />
+This is my implementation of the famous terminal function "ls". <br />The following flags are available: <br />
+## Flags
  -l  the following information is displayed for each file: file
      mode, number of links, owner name, group name, number of bytes in the file, abbreviated
      month, day-of-month file was last modified, hour file last modified, minute file last mod-
