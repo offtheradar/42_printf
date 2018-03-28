@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 11:17:39 by ysibous           #+#    #+#             */
-/*   Updated: 2018/03/28 11:34:50 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/03/28 15:42:10 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	set_options(char *options, t_options *opt)
 		opt->t = 1;
 }
 
-void	get_options(int argc, char **argv, t_options *opt)
+int		get_options(int argc, char **argv, t_options *opt)
 {
 	int i;
 
@@ -46,4 +46,5 @@ void	get_options(int argc, char **argv, t_options *opt)
 		set_options(argv[i], opt);
 		i++;
 	}
+	return (i);
 }
