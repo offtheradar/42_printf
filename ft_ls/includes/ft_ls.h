@@ -6,12 +6,13 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 21:01:29 by ysibous           #+#    #+#             */
-/*   Updated: 2018/03/26 21:58:31 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/03/28 11:23:43 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <dirent.h>
+#ifndef FT_LS_H
+# include "libft/libft.h"
+# include <dirent.h>
 
 typedef struct		s_options
 {
@@ -21,3 +22,9 @@ typedef struct		s_options
 	int		r;
 	int		t;
 }					t_options;
+
+void				init_options(t_options *opt);
+
+void				get_options(char *options, t_options *opt);
+
+#endif

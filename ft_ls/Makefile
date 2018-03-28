@@ -6,7 +6,7 @@
 #    By: ysibous <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/23 18:15:35 by ysibous           #+#    #+#              #
-#    Updated: 2018/03/26 21:57:55 by ysibous          ###   ########.fr        #
+#    Updated: 2018/03/28 11:23:16 by ysibous          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,16 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -o
 
 FILES = main.c
+FILES += handle_options.c
 
 SRC = $(addprefix src/, $(FILES))
 
 all: $(NAME)
 
-LIBFT = libft/libft.a
+LIBFT = includes/libft/libft.a
 
 mlibft.a: 
-		make -C libft re
+		make -C includes -C libft re
 
 $(NAME): mlibft.a
 	$(CC) $(CFLAGS) $(NAME) $(SRC) $(LIBFT)
