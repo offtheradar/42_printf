@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 21:01:29 by ysibous           #+#    #+#             */
-/*   Updated: 2018/03/28 21:08:52 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/03/29 21:32:04 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct		s_options
 
 typedef	struct		s_file_info
 {
-	char	*name;
-	int		is_hidden;
+	char				*name;
+	//int		is_hidden;
 	int		is_dir;
-	t_list	*files;
+	struct s_file_info *next;
 }					t_file_info;
 
 t_options			*init_options(void);
@@ -38,5 +38,5 @@ void				set_options(char *options, t_options *opt);
 
 int					get_options(int argc, char **argv, t_options *opt);
 
-void				get_file_info(char *str, t_list *lst);
+t_file_info			*get_file_info(char *str);
 #endif
