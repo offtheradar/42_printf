@@ -6,7 +6,7 @@
 /*   By: ysibous <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 20:22:50 by ysibous           #+#    #+#             */
-/*   Updated: 2018/03/29 21:57:50 by ysibous          ###   ########.fr       */
+/*   Updated: 2018/03/30 10:02:19 by ysibous          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_file_info		*get_file_info(char *str)
 	if (S_ISDIR(buff->st_mode))
 	{
 		new->is_dir = 1;
-		new = new->next;
+		new->next= new;
 		d = opendir(str);
 		while ((dir = readdir(d)))
 		{
@@ -57,6 +57,11 @@ t_file_info		*get_file_info(char *str)
 		closedir(d);
 	}
 	return (root);
+}
+
+void	order_f_info_lst(t_file_info **root, t_options *opt)
+{
+	return ;
 }
 
 void	print_lst_info(t_file_info *root)
@@ -79,6 +84,16 @@ int		main(int argc, char **argv)
 	{
 		root = get_file_info(argv[i]);
 		print_lst_info(root);
+		if (opt->t || opt->r)
+			order_f_info_lst(root,opt);
+		/*if (opt->R)
+		{
+			while (root)
+			{
+				if (root->is_dir)
+					main()
+			}
+		}*/
 		free(root);
 		i++;
 	}
